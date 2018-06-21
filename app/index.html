@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html ng-app="movieApp">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Movie List App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script src="app.js"></script>
+    <script src="components/movie-detail.js"></script>
+    <script src="services/movie-service.js"></script>
+</head>
+<body ng-controller="MainCtrl as vm">
+    <section class="movie-filter flex-align-end">
+        <span class="toggle-btn" ng-click="vm.toggleDecade('1990s')" ng-class="{active:vm.decade['1990s']}">1990&rsquo;s</span>
+        <span class="toggle-btn" ng-click="vm.toggleDecade('2000s')" ng-class="{active:vm.decade['2000s']}">2000&rsquo;s</span>
+    </section>
+    <movie-detail ng-repeat="movie in vm.movies | decade: vm.decade" movie="movie"></movie-detail>
+</body>
+</html>

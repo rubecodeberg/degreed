@@ -1,0 +1,19 @@
+<div class="movie-poster">
+    <img ng-src="images/{{vm.movie.imdbID}}-poster.jpg"/>    
+</div>
+<div class="movie-info">
+    <h3 class="movie-title" ng-bind="vm.movie.Title"></h3>
+    <div class="movie-specs space-between">
+        <span class="align-start">
+            <span class="movie-rating" ng-bind="vm.movie.Rated"></span>
+            <span class="movie-runtime" ng-bind="vm.movie.Runtime"></span>
+        </span>
+        <span class="align-end">
+            <span class="movie-released" ng-bind="vm.movie.Released"></span>
+        </span>
+    </div>
+    <div class="movie-description"ng-bind="vm.movie.Plot"></div>
+    <div class="flex-align-end">
+        <a ng-href="https://www.imdb.com/title/{{vm.movie.imdbID}}" target="_blank" class="imdb-link">View on IMDB</a>
+    </div>
+</div>
